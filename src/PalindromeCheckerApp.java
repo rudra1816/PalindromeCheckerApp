@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class PalindromeCheckerApp {
 
     private static final String APP_NAME = "Palindrome Checker Application";
@@ -19,6 +21,24 @@ public class PalindromeCheckerApp {
         } else {
             System.out.println(word + " is not a palindrome.");
         }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string to check: ");
+        String input = scanner.nextLine();
+
+        String reversedInput = "";
+
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversedInput = reversedInput + input.charAt(i);
+        }
+
+        if (input.equals(reversedInput)) {
+            System.out.println(input + " is a palindrome.");
+        } else {
+            System.out.println(input + " is not a palindrome.");
+        }
+
+        scanner.close();
     }
 
     private static void displayWelcomeMessage() {
