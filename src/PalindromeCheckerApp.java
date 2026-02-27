@@ -38,6 +38,29 @@ public class PalindromeCheckerApp {
             System.out.println(input + " is not a palindrome.");
         }
 
+        System.out.print("Enter a string for char[] check: ");
+        String arrayInput = scanner.nextLine();
+
+        char[] characters = arrayInput.toCharArray();
+        int start = 0;
+        int end = characters.length - 1;
+        boolean isPalindrome = true;
+
+        while (start < end) {
+            if (characters[start] != characters[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+
+        if (isPalindrome) {
+            System.out.println(arrayInput + " is a palindrome.");
+        } else {
+            System.out.println(arrayInput + " is not a palindrome.");
+        }
+
         scanner.close();
     }
 
