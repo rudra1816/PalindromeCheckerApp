@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Stack;
 
 public class PalindromeCheckerApp {
 
@@ -23,6 +24,7 @@ public class PalindromeCheckerApp {
         }
 
         Scanner scanner = new Scanner(System.in);
+
         System.out.print("Enter a string to check: ");
         String input = scanner.nextLine();
 
@@ -59,6 +61,27 @@ public class PalindromeCheckerApp {
             System.out.println(arrayInput + " is a palindrome.");
         } else {
             System.out.println(arrayInput + " is not a palindrome.");
+        }
+
+        System.out.print("Enter a string for Stack check: ");
+        String stackInput = scanner.nextLine();
+
+        Stack<Character> stack = new Stack<>();
+
+        for (int i = 0; i < stackInput.length(); i++) {
+            stack.push(stackInput.charAt(i));
+        }
+
+        String reversedStack = "";
+
+        while (!stack.isEmpty()) {
+            reversedStack = reversedStack + stack.pop();
+        }
+
+        if (stackInput.equals(reversedStack)) {
+            System.out.println(stackInput + " is a palindrome.");
+        } else {
+            System.out.println(stackInput + " is not a palindrome.");
         }
 
         scanner.close();
