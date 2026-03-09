@@ -1,6 +1,7 @@
-public class PalindromeCheckerApp {
+class PalindromeChecker {
 
-    static boolean isPalindrome(String str) {
+    // Method to check palindrome
+    public boolean checkPalindrome(String str) {
 
         int start = 0;
         int end = str.length() - 1;
@@ -17,6 +18,9 @@ public class PalindromeCheckerApp {
 
         return true;
     }
+}
+
+public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
@@ -25,10 +29,12 @@ public class PalindromeCheckerApp {
         System.out.println("Enter a string:");
         String input = sc.nextLine();
 
-        // Normalize string (remove spaces and convert to lowercase)
-        String processed = input.replaceAll("\\s+", "").toLowerCase();
+        // Creating object of service class
+        PalindromeChecker checker = new PalindromeChecker();
 
-        if (isPalindrome(processed)) {
+        boolean result = checker.checkPalindrome(input);
+
+        if (result) {
             System.out.println("Palindrome");
         } else {
             System.out.println("Not Palindrome");
